@@ -34,7 +34,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  GoogleMapController mapController;
+  late GoogleMapController mapController;
   // double _originLatitude = 6.5212402, _originLongitude = 3.3679965;
   // double _destLatitude = 6.849660, _destLongitude = 3.648190;
   double _originLatitude = 26.48424, _originLongitude = 50.04551;
@@ -43,7 +43,7 @@ class _MapScreenState extends State<MapScreen> {
   Map<PolylineId, Polyline> polylines = {};
   List<LatLng> polylineCoordinates = [];
   PolylinePoints polylinePoints = PolylinePoints();
-  String googleAPiKey = "Please provide your api key";
+  String googleAPiKey = "Your API Key";
 
   @override
   void initState() {
