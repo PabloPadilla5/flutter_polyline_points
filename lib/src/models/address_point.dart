@@ -11,7 +11,9 @@ class AddressPoint with AddressPointMixin {
         longitude: json['lng']?.toDouble(),
       );
 
+  @override
   final double latitude;
+  @override
   final double longitude;
 
   AddressPoint copyWith({
