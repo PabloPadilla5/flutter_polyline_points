@@ -84,14 +84,14 @@ class _MapScreenState extends State<MapScreen> {
     mapController = controller;
   }
 
-  _addMarker(LatLng position, String id, BitmapDescriptor descriptor) {
+  void _addMarker(LatLng position, String id, BitmapDescriptor descriptor) {
     MarkerId markerId = MarkerId(id);
     Marker marker =
         Marker(markerId: markerId, icon: descriptor, position: position);
     markers[markerId] = marker;
   }
 
-  _addPolyLine() {
+  void _addPolyLine() {
     PolylineId id = PolylineId('poly');
     Polyline polyline = Polyline(
         polylineId: id, color: Colors.red, points: polylineCoordinates);
@@ -99,7 +99,7 @@ class _MapScreenState extends State<MapScreen> {
     setState(() {});
   }
 
-  _getPolyline() async {
+  void _getPolyline() async {
     DirectionRoute result = await polylinePoints.getRouteBetweenCoordinates(
         googleAPiKey,
         AddressPoint(latitude: _originLatitude, longitude: _originLongitude),
