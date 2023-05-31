@@ -42,7 +42,7 @@ class NetworkUtil {
     }
 
     if (wayPoints.isNotEmpty) {
-      List wayPointsArray = [];
+      List<String> wayPointsArray = [];
       wayPoints.forEach((point) => wayPointsArray.add(point.location));
       String wayPointsString = wayPointsArray.join('|');
       if (optimizeWaypoints) {
