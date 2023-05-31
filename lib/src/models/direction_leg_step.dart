@@ -18,14 +18,14 @@ class DirectionLegStep {
 
   factory DirectionLegStep.fromJson(Map<String, dynamic> json) =>
       DirectionLegStep(
-        distance: RouteDistance.fromJson(json["distance"]),
-        duration: RouteDuration.fromJson(json["duration"]),
-        endLocation: AddressPoint.fromJson(json["end_location"]),
-        htmlInstructions: json["html_instructions"],
-        polyline: DirectionOverviewPolyline.fromJson(json["polyline"]),
-        startLocation: AddressPoint.fromJson(json["start_location"]),
-        travelMode: json["travel_mode"],
-        maneuver: json["maneuver"],
+        distance: RouteDistance.fromJson(json['distance']),
+        duration: RouteDuration.fromJson(json['duration']),
+        endLocation: AddressPoint.fromJson(json['end_location']),
+        htmlInstructions: json['html_instructions'],
+        polyline: DirectionOverviewPolyline.fromJson(json['polyline']),
+        startLocation: AddressPoint.fromJson(json['start_location']),
+        travelMode: json['travel_mode'],
+        maneuver: json['maneuver'],
       );
 
   final RouteDistance distance;
@@ -59,13 +59,13 @@ class DirectionLegStep {
       );
 
   Map<String, dynamic> toJson() => {
-        "distance": distance.toJson(),
-        "duration": duration.toJson(),
-        "end_location": endLocation.toJson(),
-        "html_instructions": htmlInstructions,
-        "polyline": polyline.toJson(),
-        "start_location": startLocation.toJson(),
-        "travel_mode": travelMode,
-        "maneuver": maneuver,
+        'distance': distance.toJson(),
+        'duration': duration.toJson(),
+        'end_location': endLocation.toJson(),
+        'html_instructions': htmlInstructions,
+        'polyline': polyline.toJson(),
+        'start_location': startLocation.toJson(),
+        'travel_mode': travelMode,
+        'maneuver': maneuver,
       };
 }

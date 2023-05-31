@@ -10,7 +10,7 @@ import 'package:flutter_polyline_points/src/utils/request_enums.dart';
 import 'package:flutter_polyline_points/src/utils/polyline_result.dart';
 
 class NetworkUtil {
-  static const String STATUS_OK = "ok";
+  static const String STATUS_OK = 'ok';
 
   ///Get the encoded string from google directions api
   ///
@@ -27,10 +27,10 @@ class NetworkUtil {
     String mode = travelMode.toString().replaceAll('TravelMode.', '');
     PolylineResult result = PolylineResult();
     var params = {
-      "origin": "${origin.latitude},${origin.longitude}",
-      "destination": "${destination.latitude},${destination.longitude}",
-      "mode": mode,
-      "key": googleApiKey
+      'origin': '${origin.latitude},${origin.longitude}',
+      'destination': '${destination.latitude},${destination.longitude}',
+      'mode': mode,
+      'key': googleApiKey
     };
     // Build the "avoid" parameter which should be formatted the following way:
     // avoid=tolls|highways|ferries
@@ -40,7 +40,7 @@ class NetworkUtil {
     if (avoid.isNotEmpty) {
       // Remove the last character of the generated String which should be "|"
       avoid = avoid.substring(0, avoid.length - 1);
-      params["avoid"] = avoid;
+      params['avoid'] = avoid;
     }
 
     if (wayPoints.isNotEmpty) {
@@ -50,26 +50,26 @@ class NetworkUtil {
       if (optimizeWaypoints) {
         wayPointsString = 'optimize:true|$wayPointsString';
       }
-      params.addAll({"waypoints": wayPointsString});
+      params.addAll({'waypoints': wayPointsString});
     }
     Uri uri =
-        Uri.https("maps.googleapis.com", "maps/api/directions/json", params);
+        Uri.https('maps.googleapis.com', 'maps/api/directions/json', params);
 
     log('GOOGLE MAPS URL: ' + uri.toString());
     var response = await http.get(uri);
     if (response.statusCode == 200) {
       var parsedJson = json.decode(response.body);
-      result.status = parsedJson["status"];
-      if (parsedJson["status"]?.toLowerCase() == STATUS_OK &&
-          parsedJson["routes"] != null &&
-          parsedJson["routes"].isNotEmpty) {
+      result.status = parsedJson['status'];
+      if (parsedJson['status']?.toLowerCase() == STATUS_OK &&
+          parsedJson['routes'] != null &&
+          parsedJson['routes'].isNotEmpty) {
         final routes = List<DirectionRoute>.from(
-            parsedJson["routes"].map((x) => DirectionRoute.fromJson(x)));
+            parsedJson['routes'].map((x) => DirectionRoute.fromJson(x)));
         return routes.first;
       } else {
-        return Future.error(parsedJson["error_message"]);
+        return Future.error(parsedJson['error_message']);
       }
     }
-    return Future.error("Unknown error");
+    return Future.error('Unknown error');
   }
 }

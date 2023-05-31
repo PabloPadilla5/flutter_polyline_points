@@ -19,17 +19,17 @@ class DirectionRouteLeg {
 
   factory DirectionRouteLeg.fromJson(Map<String, dynamic> json) =>
       DirectionRouteLeg(
-        distance: RouteDistance.fromJson(json["distance"]),
-        duration: RouteDuration.fromJson(json["duration"]),
-        endAddress: json["end_address"],
-        endLocation: AddressPoint.fromJson(json["end_location"]),
-        startAddress: json["start_address"],
-        startLocation: AddressPoint.fromJson(json["start_location"]),
+        distance: RouteDistance.fromJson(json['distance']),
+        duration: RouteDuration.fromJson(json['duration']),
+        endAddress: json['end_address'],
+        endLocation: AddressPoint.fromJson(json['end_location']),
+        startAddress: json['start_address'],
+        startLocation: AddressPoint.fromJson(json['start_location']),
         steps: List<DirectionLegStep>.from(
-            json["steps"].map((x) => DirectionLegStep.fromJson(x))),
+            json['steps'].map((x) => DirectionLegStep.fromJson(x))),
         trafficSpeedEntry:
-            List<dynamic>.from(json["traffic_speed_entry"].map((x) => x)),
-        viaWaypoint: List<dynamic>.from(json["via_waypoint"].map((x) => x)),
+            List<dynamic>.from(json['traffic_speed_entry'].map((x) => x)),
+        viaWaypoint: List<dynamic>.from(json['via_waypoint'].map((x) => x)),
       );
 
   final RouteDistance distance;
@@ -68,15 +68,15 @@ class DirectionRouteLeg {
       );
 
   Map<String, dynamic> toJson() => {
-        "distance": distance.toJson(),
-        "duration": duration.toJson(),
-        "end_address": endAddress,
-        "end_location": endLocation.toJson(),
-        "start_address": startAddress,
-        "start_location": startLocation.toJson(),
-        "steps": List<dynamic>.from(steps.map((x) => x.toJson())),
-        "traffic_speed_entry":
+        'distance': distance.toJson(),
+        'duration': duration.toJson(),
+        'end_address': endAddress,
+        'end_location': endLocation.toJson(),
+        'start_address': startAddress,
+        'start_location': startLocation.toJson(),
+        'steps': List<dynamic>.from(steps.map((x) => x.toJson())),
+        'traffic_speed_entry':
             List<dynamic>.from(trafficSpeedEntry.map((x) => x)),
-        "via_waypoint": List<dynamic>.from(viaWaypoint.map((x) => x)),
+        'via_waypoint': List<dynamic>.from(viaWaypoint.map((x) => x)),
       };
 }

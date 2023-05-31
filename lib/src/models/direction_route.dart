@@ -16,15 +16,15 @@ class DirectionRoute {
   });
 
   factory DirectionRoute.fromJson(Map<String, dynamic> json) => DirectionRoute(
-        bounds: DirectionRouteBounds.fromJson(json["bounds"]),
-        copyrights: json["copyrights"],
+        bounds: DirectionRouteBounds.fromJson(json['bounds']),
+        copyrights: json['copyrights'],
         legs: List<DirectionRouteLeg>.from(
-            json["legs"].map((x) => DirectionRouteLeg.fromJson(x))),
+            json['legs'].map((x) => DirectionRouteLeg.fromJson(x))),
         overviewPolyline:
-            DirectionOverviewPolyline.fromJson(json["overview_polyline"]),
-        summary: json["summary"],
-        warnings: List<dynamic>.from(json["warnings"].map((x) => x)),
-        waypointOrder: List<dynamic>.from(json["waypoint_order"].map((x) => x)),
+            DirectionOverviewPolyline.fromJson(json['overview_polyline']),
+        summary: json['summary'],
+        warnings: List<dynamic>.from(json['warnings'].map((x) => x)),
+        waypointOrder: List<dynamic>.from(json['waypoint_order'].map((x) => x)),
       );
 
   final DirectionRouteBounds bounds;
@@ -62,13 +62,13 @@ class DirectionRoute {
       );
 
   Map<String, dynamic> toJson() => {
-        "bounds": bounds.toJson(),
-        "copyrights": copyrights,
-        "legs": List<dynamic>.from(legs.map((x) => x.toJson())),
-        "overview_polyline": overviewPolyline.toJson(),
-        "summary": summary,
-        "warnings": List<dynamic>.from(warnings.map((x) => x)),
-        "waypoint_order": List<dynamic>.from(waypointOrder.map((x) => x)),
+        'bounds': bounds.toJson(),
+        'copyrights': copyrights,
+        'legs': List<dynamic>.from(legs.map((x) => x.toJson())),
+        'overview_polyline': overviewPolyline.toJson(),
+        'summary': summary,
+        'warnings': List<dynamic>.from(warnings.map((x) => x)),
+        'waypoint_order': List<dynamic>.from(waypointOrder.map((x) => x)),
       };
 
   ///decode the google encoded string using Encoded Polyline Algorithm Format

@@ -24,7 +24,7 @@ class PolylineWayPoint {
     if (stopOver) {
       return location;
     } else {
-      return "via:$location";
+      return 'via:$location';
     }
   }
 }

@@ -45,18 +45,18 @@ class _MapScreenState extends State<MapScreen> {
   Map<PolylineId, Polyline> polylines = {};
   List<LatLng> polylineCoordinates = [];
   PolylinePoints polylinePoints = PolylinePoints();
-  String googleAPiKey = "Your API Key";
+  String googleAPiKey = 'Your API Key';
 
   @override
   void initState() {
     super.initState();
 
     /// origin marker
-    _addMarker(LatLng(_originLatitude, _originLongitude), "origin",
+    _addMarker(LatLng(_originLatitude, _originLongitude), 'origin',
         BitmapDescriptor.defaultMarker);
 
     /// destination marker
-    _addMarker(LatLng(_destLatitude, _destLongitude), "destination",
+    _addMarker(LatLng(_destLatitude, _destLongitude), 'destination',
         BitmapDescriptor.defaultMarkerWithHue(90));
     _getPolyline();
   }
@@ -92,7 +92,7 @@ class _MapScreenState extends State<MapScreen> {
   }
 
   _addPolyLine() {
-    PolylineId id = PolylineId("poly");
+    PolylineId id = PolylineId('poly');
     Polyline polyline = Polyline(
         polylineId: id, color: Colors.red, points: polylineCoordinates);
     polylines[id] = polyline;
@@ -108,7 +108,7 @@ class _MapScreenState extends State<MapScreen> {
         avoidTolls: true,
         avoidFerries: true,
         avoidHighways: false,
-        wayPoints: [PolylineWayPoint(location: "Sabo, Yaba Lagos Nigeria")]);
+        wayPoints: [PolylineWayPoint(location: 'Sabo, Yaba Lagos Nigeria')]);
 
     result.polyline.forEach((point) {
       polylineCoordinates.add(LatLng(point.latitude, point.longitude));

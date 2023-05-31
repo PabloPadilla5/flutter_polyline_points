@@ -5,8 +5,8 @@ class RouteDuration {
   });
 
   factory RouteDuration.fromJson(Map<String, dynamic> json) => RouteDuration(
-        text: json["text"],
-        seconds: json["value"],
+        text: json['text'],
+        seconds: json['value'],
       );
 
   final int seconds;
@@ -24,7 +24,7 @@ class RouteDuration {
       );
 
   Map<String, dynamic> toJson() => {
-        "text": text,
-        "value": seconds,
+        'text': text,
+        'value': seconds,
       };
 }

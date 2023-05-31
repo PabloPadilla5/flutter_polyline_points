@@ -5,7 +5,7 @@ class DirectionOverviewPolyline {
 
   factory DirectionOverviewPolyline.fromJson(Map<String, dynamic> json) =>
       DirectionOverviewPolyline(
-        points: json["points"],
+        points: json['points'],
       );
 
   final String points;
@@ -18,6 +18,6 @@ class DirectionOverviewPolyline {
       );
 
   Map<String, dynamic> toJson() => {
-        "points": points,
+        'points': points,
       };
 }

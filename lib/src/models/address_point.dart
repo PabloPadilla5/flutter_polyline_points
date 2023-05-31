@@ -7,8 +7,8 @@ class AddressPoint with AddressPointMixin {
   });
 
   factory AddressPoint.fromJson(Map<String, dynamic> json) => AddressPoint(
-        latitude: json["lat"]?.toDouble(),
-        longitude: json["lng"]?.toDouble(),
+        latitude: json['lat']?.toDouble(),
+        longitude: json['lng']?.toDouble(),
       );
 
   final double latitude;
@@ -24,7 +24,7 @@ class AddressPoint with AddressPointMixin {
       );
 
   Map<String, dynamic> toJson() => {
-        "lat": latitude,
-        "lng": longitude,
+        'lat': latitude,
+        'lng': longitude,
       };
 }

@@ -5,8 +5,8 @@ class RouteDistance {
   });
 
   factory RouteDistance.fromJson(Map<String, dynamic> json) => RouteDistance(
-        text: json["text"],
-        meters: json["value"],
+        text: json['text'],
+        meters: json['value'],
       );
 
   final int meters;
@@ -22,7 +22,7 @@ class RouteDistance {
       );
 
   Map<String, dynamic> toJson() => {
-        "text": text,
-        "value": meters,
+        'text': text,
+        'value': meters,
       };
 }

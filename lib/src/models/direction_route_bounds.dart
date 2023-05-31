@@ -8,8 +8,8 @@ class DirectionRouteBounds {
 
   factory DirectionRouteBounds.fromJson(Map<String, dynamic> json) =>
       DirectionRouteBounds(
-        northeast: AddressPoint.fromJson(json["northeast"]),
-        southwest: AddressPoint.fromJson(json["southwest"]),
+        northeast: AddressPoint.fromJson(json['northeast']),
+        southwest: AddressPoint.fromJson(json['southwest']),
       );
 
   final AddressPoint northeast;
@@ -26,7 +26,7 @@ class DirectionRouteBounds {
   }
 
   Map<String, dynamic> toJson() => {
-        "northeast": northeast.toJson(),
-        "southwest": southwest.toJson(),
+        'northeast': northeast.toJson(),
+        'southwest': southwest.toJson(),
       };
 }
