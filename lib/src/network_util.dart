@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter_polyline_points/src/models/direction_route.dart';
 import 'package:http/http.dart' as http;
 
 import '../src/PointLatLng.dart';
@@ -13,7 +14,7 @@ class NetworkUtil {
 
   ///Get the encoded string from google directions api
   ///
-  Future<PolylineResult> getRouteBetweenCoordinates(
+  Future<DirectionRoute> getRouteBetweenCoordinates(
       String googleApiKey,
       PointLatLng origin,
       PointLatLng destination,
@@ -62,47 +63,13 @@ class NetworkUtil {
       if (parsedJson["status"]?.toLowerCase() == STATUS_OK &&
           parsedJson["routes"] != null &&
           parsedJson["routes"].isNotEmpty) {
-        result.points = decodeEncodedPolyline(
-            parsedJson["routes"][0]["overview_polyline"]["points"]);
+        final routes = List<DirectionRoute>.from(
+            parsedJson["routes"].map((x) => DirectionRoute.fromJson(x)));
+        return routes.first;
       } else {
-        result.errorMessage = parsedJson["error_message"];
+        return Future.error(parsedJson["error_message"]);
       }
     }
-    return result;
-  }
-
-  ///decode the google encoded string using Encoded Polyline Algorithm Format
-  /// for more info about the algorithm check https://developers.google.com/maps/documentation/utilities/polylinealgorithm
-  ///
-  ///return [List]
-  List<PointLatLng> decodeEncodedPolyline(String encoded) {
-    List<PointLatLng> poly = [];
-    int index = 0, len = encoded.length;
-    int lat = 0, lng = 0;
-
-    while (index < len) {
-      int b, shift = 0, result = 0;
-      do {
-        b = encoded.codeUnitAt(index++) - 63;
-        result |= (b & 0x1f) << shift;
-        shift += 5;
-      } while (b >= 0x20);
-      int dlat = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
-      lat += dlat;
-
-      shift = 0;
-      result = 0;
-      do {
-        b = encoded.codeUnitAt(index++) - 63;
-        result |= (b & 0x1f) << shift;
-        shift += 5;
-      } while (b >= 0x20);
-      int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
-      lng += dlng;
-      PointLatLng p =
-          new PointLatLng((lat / 1E5).toDouble(), (lng / 1E5).toDouble());
-      poly.add(p);
-    }
-    return poly;
+    return Future.error("Unknown error");
   }
 }
