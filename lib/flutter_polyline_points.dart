@@ -1,15 +1,15 @@
 library flutter_polyline_points;
 
+import 'package:flutter_polyline_points/src/models/address_point.dart';
 import 'package:flutter_polyline_points/src/models/direction_route.dart';
 import 'package:flutter_polyline_points/src/utils/polyline_waypoint.dart';
 import 'package:flutter_polyline_points/src/utils/request_enums.dart';
-import 'package:flutter_polyline_points/src/PointLatLng.dart';
 import 'package:flutter_polyline_points/src/network_util.dart';
 
 export 'src/utils/request_enums.dart';
 export 'src/utils/polyline_waypoint.dart';
 export 'src/network_util.dart';
-export 'src/PointLatLng.dart';
+export 'src/models/address_point.dart';
 export 'src/utils/polyline_result.dart';
 export 'src/models/direction_route.dart';
 
@@ -20,7 +20,7 @@ class PolylinePoints {
   /// which can be used to draw polyline between this two positions
   ///
   Future<DirectionRoute> getRouteBetweenCoordinates(
-      String googleApiKey, PointLatLng origin, PointLatLng destination,
+      String googleApiKey, AddressPoint origin, AddressPoint destination,
       {TravelMode travelMode = TravelMode.driving,
       List<PolylineWayPoint> wayPoints = const [],
       bool avoidHighways = false,

@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter_polyline_points/src/models/address_point.dart';
 import 'package:flutter_polyline_points/src/models/direction_route.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:flutter_polyline_points/src/PointLatLng.dart';
 import 'package:flutter_polyline_points/src/utils/polyline_waypoint.dart';
 import 'package:flutter_polyline_points/src/utils/request_enums.dart';
 import 'package:flutter_polyline_points/src/utils/polyline_result.dart';
@@ -16,8 +16,8 @@ class NetworkUtil {
   ///
   Future<DirectionRoute> getRouteBetweenCoordinates(
       String googleApiKey,
-      PointLatLng origin,
-      PointLatLng destination,
+      AddressPoint origin,
+      AddressPoint destination,
       TravelMode travelMode,
       List<PolylineWayPoint> wayPoints,
       bool avoidHighways,

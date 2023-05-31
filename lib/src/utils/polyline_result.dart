@@ -12,7 +12,7 @@ class PolylineResult {
   String? status;
 
   /// list of decoded points
-  List<PointLatLng> points;
+  List<AddressPoint> points;
 
   /// the error message returned from google, if none, the result will be empty
   String? errorMessage;

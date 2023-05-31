@@ -102,8 +102,8 @@ class _MapScreenState extends State<MapScreen> {
   _getPolyline() async {
     DirectionRoute result = await polylinePoints.getRouteBetweenCoordinates(
         googleAPiKey,
-        PointLatLng(_originLatitude, _originLongitude),
-        PointLatLng(_destLatitude, _destLongitude),
+        AddressPoint(latitude: _originLatitude, longitude: _originLongitude),
+        AddressPoint(latitude: _destLatitude, longitude: _destLongitude),
         travelMode: TravelMode.driving,
         avoidTolls: true,
         avoidFerries: true,
