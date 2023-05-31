@@ -1,8 +1,8 @@
 import 'package:flutter_polyline_points/src/models/route_distance.dart';
 import 'package:flutter_polyline_points/src/models/route_duration.dart';
 
-import 'address_point.dart';
-import 'direction_overview_polyline.dart';
+import 'package:flutter_polyline_points/src/models/address_point.dart';
+import 'package:flutter_polyline_points/src/models/direction_overview_polyline.dart';
 
 class DirectionLegStep {
   const DirectionLegStep({

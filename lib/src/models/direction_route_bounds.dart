@@ -1,4 +1,4 @@
-import 'address_point.dart';
+import 'package:flutter_polyline_points/src/models/address_point.dart';
 
 class DirectionRouteBounds {
   const DirectionRouteBounds({

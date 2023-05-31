@@ -1,4 +1,4 @@
-import '../../flutter_polyline_points.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 
 /// description:
 /// project: flutter_polyline_points

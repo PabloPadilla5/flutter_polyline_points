@@ -4,10 +4,10 @@ import 'dart:developer';
 import 'package:flutter_polyline_points/src/models/direction_route.dart';
 import 'package:http/http.dart' as http;
 
-import '../src/PointLatLng.dart';
-import '../src/utils/polyline_waypoint.dart';
-import '../src/utils/request_enums.dart';
-import 'utils/polyline_result.dart';
+import 'package:flutter_polyline_points/src/PointLatLng.dart';
+import 'package:flutter_polyline_points/src/utils/polyline_waypoint.dart';
+import 'package:flutter_polyline_points/src/utils/request_enums.dart';
+import 'package:flutter_polyline_points/src/utils/polyline_result.dart';
 
 class NetworkUtil {
   static const String STATUS_OK = "ok";

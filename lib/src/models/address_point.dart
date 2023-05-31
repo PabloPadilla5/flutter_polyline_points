@@ -1,4 +1,4 @@
-import 'address_point_mixin.dart';
+import 'package:flutter_polyline_points/src/models/address_point_mixin.dart';
 
 class AddressPoint with AddressPointMixin {
   const AddressPoint({

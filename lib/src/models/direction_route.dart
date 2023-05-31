@@ -1,8 +1,8 @@
 import 'package:flutter_polyline_points/src/models/address_point.dart';
 
-import 'direction_overview_polyline.dart';
-import 'direction_route_bounds.dart';
-import 'direction_route_leg.dart';
+import 'package:flutter_polyline_points/src/models/direction_overview_polyline.dart';
+import 'package:flutter_polyline_points/src/models/direction_route_bounds.dart';
+import 'package:flutter_polyline_points/src/models/direction_route_leg.dart';
 
 class DirectionRoute {
   const DirectionRoute({
