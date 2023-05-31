@@ -9,7 +9,7 @@ import 'package:flutter_polyline_points/src/utils/polyline_waypoint.dart';
 import 'package:flutter_polyline_points/src/utils/request_enums.dart';
 
 class NetworkUtil {
-  static const String STATUS_OK = 'ok';
+  static const String statusOk = 'ok';
 
   ///Get the encoded string from google directions api
   ///
@@ -57,7 +57,7 @@ class NetworkUtil {
     var response = await http.get(uri);
     if (response.statusCode == 200) {
       var parsedJson = json.decode(response.body);
-      if (parsedJson['status']?.toLowerCase() == STATUS_OK &&
+      if (parsedJson['status']?.toLowerCase() == statusOk &&
           parsedJson['routes'] != null &&
           parsedJson['routes'].isNotEmpty) {
         final routes = List<DirectionRoute>.from(
