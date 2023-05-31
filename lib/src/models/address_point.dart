@@ -21,8 +21,8 @@ class AddressPoint with AddressPointMixin {
     double? lng,
   }) =>
       AddressPoint(
-        latitude: lat ?? this.latitude,
-        longitude: lng ?? this.longitude,
+        latitude: lat ?? latitude,
+        longitude: lng ?? longitude,
       );
 
   Map<String, dynamic> toJson() => {
