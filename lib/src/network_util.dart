@@ -7,7 +7,6 @@ import 'package:http/http.dart' as http;
 
 import 'package:flutter_polyline_points/src/utils/polyline_waypoint.dart';
 import 'package:flutter_polyline_points/src/utils/request_enums.dart';
-import 'package:flutter_polyline_points/src/utils/polyline_result.dart';
 
 class NetworkUtil {
   static const String STATUS_OK = 'ok';
@@ -25,7 +24,6 @@ class NetworkUtil {
       bool avoidFerries,
       bool optimizeWaypoints) async {
     String mode = travelMode.toString().replaceAll('TravelMode.', '');
-    PolylineResult result = PolylineResult();
     var params = {
       'origin': '${origin.latitude},${origin.longitude}',
       'destination': '${destination.latitude},${destination.longitude}',
@@ -59,7 +57,6 @@ class NetworkUtil {
     var response = await http.get(uri);
     if (response.statusCode == 200) {
       var parsedJson = json.decode(response.body);
-      result.status = parsedJson['status'];
       if (parsedJson['status']?.toLowerCase() == STATUS_OK &&
           parsedJson['routes'] != null &&
           parsedJson['routes'].isNotEmpty) {

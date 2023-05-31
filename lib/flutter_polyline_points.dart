@@ -10,7 +10,6 @@ export 'src/utils/request_enums.dart';
 export 'src/utils/polyline_waypoint.dart';
 export 'src/network_util.dart';
 export 'src/models/address_point.dart';
-export 'src/utils/polyline_result.dart';
 export 'src/models/direction_route.dart';
 
 class PolylinePoints {
