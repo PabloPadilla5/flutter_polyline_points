@@ -19,6 +19,7 @@ class NetworkUtil {
       AddressPoint destination,
       TravelMode travelMode,
       List<PolylineWayPoint> wayPoints,
+      String language,
       bool avoidHighways,
       bool avoidTolls,
       bool avoidFerries,
@@ -28,6 +29,7 @@ class NetworkUtil {
       'origin': '${origin.latitude},${origin.longitude}',
       'destination': '${destination.latitude},${destination.longitude}',
       'mode': mode,
+      'language': language,
       'key': googleApiKey
     };
     // Build the "avoid" parameter which should be formatted the following way:
