@@ -11,6 +11,7 @@ export 'src/utils/polyline_waypoint.dart';
 export 'src/network_util.dart';
 export 'src/models/address_point.dart';
 export 'src/models/direction_route.dart';
+export 'src/models/direction_leg_step.dart';
 
 class PolylinePoints {
   NetworkUtil util = NetworkUtil();
